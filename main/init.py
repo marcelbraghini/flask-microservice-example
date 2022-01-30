@@ -1,5 +1,6 @@
 from flask import Flask
 import json
+from main.settings import HOST, PORT
 
 app = Flask(__name__)
 
@@ -19,5 +20,4 @@ def init():
 
 
 if __name__ == '__main__':
-    port = int(5000)
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host=HOST, port=int(PORT))
