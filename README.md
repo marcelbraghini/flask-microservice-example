@@ -9,6 +9,8 @@ pip3 install -r requirements.txt
 
 Up server
 ```bash
+$ bin/server
+or:
 /main$ python3 init.py
 ```
 
