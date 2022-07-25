@@ -1,6 +1,6 @@
 from flask import Flask
 
-from application.rest import person_controller, status_controller
+from application.endpoint import history_action_controller, current_action_controller, status_controller
 
 
 def create_app(config_name):
@@ -11,7 +11,9 @@ def create_app(config_name):
 
     app.config.from_object(config_module)
 
-    app.register_blueprint(person_controller.blueprint)
+    app.register_blueprint(history_action_controller.blueprint)
+
+    app.register_blueprint(current_action_controller.blueprint)
 
     app.register_blueprint(status_controller.blueprint)
 

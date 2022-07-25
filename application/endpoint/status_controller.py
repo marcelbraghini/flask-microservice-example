@@ -6,7 +6,7 @@ blueprint = Blueprint("status", __name__)
 
 
 @blueprint.route("/status", methods=["GET"])
-def save_person():
+def get_situation():
     status = {
         'status': 'OK'
     }

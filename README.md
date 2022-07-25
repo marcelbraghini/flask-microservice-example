@@ -26,10 +26,23 @@ For run container
 docker run -p 5000:5000 -d flask_microservice_example
 ```
 
-Links: 
+CURLs: 
 ```
-https://www.thedigitalcatbooks.com/pycabook-chapter-04/
-https://flask.palletsprojects.com/en/2.1.x/config/
-https://flask.palletsprojects.com/en/2.1.x/patterns/appfactories/
-https://flask.palletsprojects.com/en/2.1.x/blueprints/
+
+curl --location --request POST 'localhost:5000/history-action' \
+--header 'Content-Type: application/json' \
+--data-raw '{ 
+    "actionName": "WEGE3F.SA",
+    "startDate": "2022-01-01",
+    "endDate": "2022-07-30"
+}'
+
+curl --location --request POST 'localhost:5000/current-action' \
+--header 'Content-Type: application/json' \
+--data-raw '["TAEE4F.SA"]'
+
+curl --location --request POST 'localhost:5000/current-action' \
+--header 'Content-Type: application/json' \
+--data-raw '["TAEE4F.SA", "WEGE3F.SA"]'
+
 ```
